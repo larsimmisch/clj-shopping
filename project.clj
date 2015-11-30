@@ -8,8 +8,10 @@
                  [ring/ring-core "1.4.0"]
                  [ring/ring-json "0.4.0"]
                  [ring/ring-jetty-adapter "1.2.1"]
-                 [compojure "1.1.6"]]
+                 [compojure "1.1.6"]
+                 [cheshire "5.5.0"]]
   :ring {:handler clj-shopping.handler/app
-       :nrepl {:start? true
-               :port 9998}}
+         :init clj-shopping.handler/init
+         :nrepl {:start? true
+                 :port 9998}}
   :profiles {:dev {:dependencies [[ring/ring-mock "0.3.0"]]}})
