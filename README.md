@@ -1,5 +1,7 @@
 # clj-shopping
 
+_Clojure is hard, let's go shopping_
+
 This is a toy project, written while I was learning Clojure.
 
 It is a small webservice that handles updates to a single shopping list.
