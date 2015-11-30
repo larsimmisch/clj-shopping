@@ -61,9 +61,10 @@
 (defn list-patch-handler
   [{{action "action" shop "shop" item "item"} :params}]
   (cond
+    (not (and shop item)) (status-response 422 {:message "Invalid/missing shop/item"})
     (= action "add") (status-response 200 ((partial list-op add-to-list) shop item))
     (= action "done") (status-response 200 ((partial list-op done-from-list) shop item))
-    :else (status-response 422 {:message "Invalid/missing action/shop/item"}))
+    :else (status-response 422 {:message "Invalid/missing action"}))
   )
 
 (defn list-handler
